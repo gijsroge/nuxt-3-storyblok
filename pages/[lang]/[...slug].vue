@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 const { data } = await useStoryblokPage();
-console.log("slug");
 </script>
 
 <template>
