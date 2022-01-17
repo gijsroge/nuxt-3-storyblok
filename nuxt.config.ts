@@ -6,6 +6,6 @@ export default defineNuxtConfig({
     VITE_STORYBLOK_TOKEN: process.env.VITE_STORYBLOK_TOKEN,
   },
   build: {
-    transpile: ['@storyblok/nuxt']
+    transpile: ["@storyblok/nuxt"],
   }
 });
