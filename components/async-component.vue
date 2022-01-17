@@ -7,6 +7,7 @@ const { data } = await useFetch("https://jsonplaceholder.typicode.com/users");
 <template>
   <div>
     <h1>{{ blok.title }}</h1>
+    <strong>Async data:</strong>
     {{ data }}
   </div>
 </template>
