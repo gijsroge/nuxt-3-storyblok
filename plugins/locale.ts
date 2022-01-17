@@ -1,5 +1,4 @@
 export default defineNuxtPlugin(({ ssrContext }) => {
-  const router = useRouter();
   if (process.server && ssrContext) {
     const { res, url } = ssrContext;
     if (url === "/") {
@@ -9,6 +8,7 @@ export default defineNuxtPlugin(({ ssrContext }) => {
       res.end();
     }
   } else if (process.client) {
+    const router = useRouter();
     router.beforeEach((to, _, next) => {
       if (to.path === "/") {
         return next("/nl");

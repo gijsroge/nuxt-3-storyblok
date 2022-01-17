@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 const { data } = await useStoryblokPage();
+console.log("slug");
 </script>
 
 <template>
-  <h1>{{ data.story.name }}</h1>
-  <ul>
-    <li v-for="block in data.story.content.body">
-      {{ block?.title || block._uid }}
-    </li>
-  </ul>
+  <div>
+    <h1>{{ data.story.name }}</h1>
+    <ul>
+      <li v-for="block in data.story.content.body">
+        <component :is="block.component" :blok="block"></component>
+      </li>
+    </ul>
+  </div>
 </template>
