@@ -4,7 +4,6 @@ async function loadBridge() {
     const script = document.createElement("script");
     script.src = "//app.storyblok.com/f/storyblok-v2-latest.js";
     script.id = "storyblokBridge";
-    console.log(script.src);
     document.body.appendChild(script);
     script.onload = () => {
       resolve(true);

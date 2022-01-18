@@ -1,22 +1,6 @@
 <script lang="ts" setup>
 import useFetchStoryblokComponent from "~/composables/useFetchStoryblokComponent";
 const { data } = await useStoryblokPage();
-
-/**
- * Load bridge only on storyblok editor
- */
-if (process.client && window.location.search.includes("_storyblok")) {
-  const { default: useBridge } = await import(
-    "~/composables/useStoryblokBridge"
-  );
-  const { bridgeInstance } = await useBridge();
-
-  bridgeInstance.value.on("input", (inputEvent) => {
-    if (data.value) {
-      data.value.story = inputEvent.story;
-    }
-  });
-}
 </script>
 
 <template>
