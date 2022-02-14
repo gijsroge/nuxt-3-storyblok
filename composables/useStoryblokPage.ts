@@ -8,7 +8,7 @@ export default async function () {
     if (Array.isArray(route.params.slug)) {
       return route.params.slug.join("/");
     }
-    if (route.params.slug === "") return "/home";
+    if (route.params.slug === "") return `/${route.params.lang}/index`
     return "";
   });
 
