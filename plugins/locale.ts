@@ -3,7 +3,7 @@ export default defineNuxtPlugin(({ ssrContext }) => {
     const { res, url } = ssrContext;
     if (url === "/") {
       res.writeHead(302, {
-        Location: "/nl",
+        Location: "/nl-be",
       });
       res.end();
     }
@@ -11,7 +11,7 @@ export default defineNuxtPlugin(({ ssrContext }) => {
     const router = useRouter();
     router.beforeEach((to, _, next) => {
       if (to.path === "/") {
-        return next("/nl");
+        return next("/nl-be");
       }
 
       return next();

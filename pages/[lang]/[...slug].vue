@@ -5,15 +5,13 @@ const { data } = await useStoryblokPage();
 
 <template>
   <div>
-    <h1>{{ data.story.name }}</h1>
+    <h1>Page: {{ data.story.name }}</h1>
 
-    <ul>
-      <li v-for="block in data.story.content.body">
-        <component
-          :is="useFetchStoryblokComponent({ component: block.component })"
-          :blok="block"
-        ></component>
-      </li>
-    </ul>
+    <div v-for="block in data.story.content.body">
+      <component
+        :is="useFetchStoryblokComponent({ component: block.component })"
+        :blok="block"
+      ></component>
+    </div>
   </div>
 </template>
